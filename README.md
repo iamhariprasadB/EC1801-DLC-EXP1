@@ -20,16 +20,38 @@ exp1_boolean_min_tb.v	Verilog testbench
 exp1_boolean_min.vcd	VCD waveform dump generated during simulation
 
 ## Verilog Program
-
+```
+module ex_1(
+    input  wire A, B,
+    output wire y
+);
+    assign y = ~A | B;
+endmodule
+```
 
 
 ## TestBench Program
 
+```
+module tb;
+reg A, B;
+wire y;
+ex_1 uut (.A(A), .B(B), .y(y));
+initial begin
+        // ---- VCD dump setup ----
+        $dumpfile("ex_1.vcd");   // name of the VCD file to be generated
+        $dumpvars(0, tb);   // dump all signals in this testbench hierarchy
 
-
-
-
-
+	$monitor("A=%b B=%b y=%b", 
+	A,B,y);
+	A=0; B=0; #10;
+	A=0; B=1; #10;
+	A=1; B=0; #10;
+	A=1; B=1; #10;
+	$finish;
+	end
+endmodule
+```
 
     
 ## Truth Table
@@ -84,6 +106,8 @@ was minimized to F=B'D'+BD.
 and successfully implemented using Verilog HDL.
 
 ## OUTPUT
+<img width="877" height="282" alt="Output" src="https://github.com/user-attachments/assets/dc1d8dad-e441-4d84-82f0-13205a29d790" />
+<img width="1777" height="936" alt="Waveform" src="https://github.com/user-attachments/assets/dfd1be91-807c-43b3-9e2a-58b71a59f21b" />
 
 
 
