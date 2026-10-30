@@ -107,6 +107,8 @@ and successfully implemented using Verilog HDL.
 
 ## OUTPUT
 <img width="877" height="282" alt="Output" src="https://github.com/user-attachments/assets/dc1d8dad-e441-4d84-82f0-13205a29d790" />
+
+WAVEFORM:
 <img width="1777" height="936" alt="Waveform" src="https://github.com/user-attachments/assets/dfd1be91-807c-43b3-9e2a-58b71a59f21b" />
 
 
